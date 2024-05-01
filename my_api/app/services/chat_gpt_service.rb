@@ -1,5 +1,8 @@
 class ChatGptService
   include HTTParty
+  base_uri 'https://api.openai.com/v1'
+  headers 'Authorization' => "Bearer own-key"
+
 
   def self.generate_response(prompt)
     response = post('/engines/gpt-3.5-turbo/completions', {
